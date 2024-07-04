@@ -36,8 +36,18 @@ public class Curriculo implements Serializable {
     @NotEmpty
     private String Escolaridade;
     private String observacoes;
-    @Nullable
-    private File curriculo;
+    @OneToOne
+    private FileDB curriculo;
+
+    private String ipaddr;
+
+    public String getIpaddr() {
+        return ipaddr;
+    }
+
+    public void setIpaddr(String ipaddr) {
+        this.ipaddr = ipaddr;
+    }
 
     public Long getId() {
         return id;
@@ -95,11 +105,11 @@ public class Curriculo implements Serializable {
         this.observacoes = observacoes;
     }
 
-    public File getCurriculo() {
+    public FileDB getCurriculo() {
         return curriculo;
     }
 
-    public void setCurriculo(File curriculo) {
+    public void setCurriculo(FileDB curriculo) {
         this.curriculo = curriculo;
     }
 
